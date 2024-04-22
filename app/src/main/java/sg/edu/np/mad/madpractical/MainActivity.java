@@ -1,6 +1,8 @@
-package sg.edu.np.mad.madpractical2;
+package sg.edu.np.mad.madpractical;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -33,5 +35,20 @@ public class MainActivity extends AppCompatActivity {
         tvName.setText(user.name);
         tvDescription.setText(user.description);
         btnFollow.setText("Follow");
+
+        btnFollow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!user.followed) {
+                    btnFollow.setText("Unfollow");
+                    user.followed = true;
+                    Log.i("btnFollow", "onClick: Followed");
+                } else {
+                    btnFollow.setText("Follow");
+                    user.followed = false;
+                    Log.i("btnFollow", "onClick: Unfollowed");
+                }
+            }
+        });
     }
 }
