@@ -1,4 +1,4 @@
-package sg.edu.np.mad.madpractical;
+package sg.edu.np.mad.madpractical2;
 
 import android.os.Bundle;
 import android.util.Log;
